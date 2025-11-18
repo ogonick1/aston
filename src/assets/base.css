@@ -1,0 +1,71 @@
+:root {
+  --white: #ffffff;
+  --grey: #F5F7FA;
+  --small-text: #3C414A;
+  --black: #111C2E;
+  --black-200:#B3BBC2;
+  --primary: #062150;
+  --secondary: #E3EAF5;
+  --accent: #FF6000;
+  --peach-bg: #FBF5F1;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Recommended for better performance */
+}
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal; /* Recommended for better performance */
+}
+@font-face {
+  font-family: 'Archivo';
+  src: url('/fonts/Archivo-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal; /* Recommended for better performance */
+}
+
+:root {
+  --color-background: var(--white);
+  --color-text: var(--small-text);
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.5;
+  font-family:
+    Archivo,
+    sans-serif;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  text-decoration: none;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
