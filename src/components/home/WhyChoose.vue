@@ -1,24 +1,22 @@
 <template>
-  <div class="container hero">
-    <div class="hero__left">
-      <h1 class="hero__left-title">DIFC business setup in Dubai</h1>
-      <div class="hero__left-description">
-        Build your financial company in the region’s most respected business centre.
+  <div class="container why">
+    <div class="why__left">
+      <h2 class="why__left-title">Why choose DIFC?</h2>
+      <div class="why__left-description">
+        The zone offers a stable and transparent environment that appeals to serious investors,
+        financial professionals, and founders who require structure, trust, and international
+        credibility.
       </div>
-      <div class="hero__left-btns">
-        <button class="btn btn-primary">Start my business</button>
-        <UIButton label="Book a meeting" />
-      </div>
+      <CheckList class="desktop" :items="benefits" icon="/icons/check.svg" />
     </div>
-    <div class="hero__image">
-      <div class="hero__image-main" data-aos="fade-left">
-        <img src="/hero.jpg" alt="hero img" />
+    <div class="why__image">
+      <div class="why__image-main">
+        <img src="/why.jpg" alt="why img" />
       </div>
-      <div class="hero__image-small">
-        <img class="hero__image-stars" src="/icons/stars.svg" alt="stars" />
-        <img class="hero__image-house" src="/icons/hero-house.png" alt="home" />
+      <div class="why__image-small" data-aos="fade-up">
+        <div class="why__image-stars">For high-level corporate governance</div>
         <svg
-          class="hero__image-graph"
+          class="why__image-graph"
           width="210"
           height="95"
           viewBox="0 0 210 95"
@@ -32,44 +30,72 @@
         </svg>
       </div>
     </div>
+    <CheckList class="mobile" :items="benefits" icon="/icons/check.svg"/>
+    <button class="btn btn-primary mobile">Contact us</button>
   </div>
 </template>
 
 <script setup>
-import UIButton from '../ui/UIButton.vue'
+import CheckList from '../ui/CheckList.vue'
+const benefits = [
+  'Independent jurisdiction with English-language common law',
+  '100% foreign ownership and no currency controls',
+  'No restrictions on profit repatriation',
+  '50-year guarantee of zero tax on income and profits',
+  'International arbitration centre and courts with global recognition',
+]
 </script>
 
 <style scoped lang="scss">
-.hero {
-  margin-top: 36px;
+.btn-primary {
+  width: 100%;
+  @include btn-base($primary, #ffffff, $black);
+}
+.desktop {
+  display: block;
+  @media (max-width: 760px) {
+    display: none;
+  }
+}
+.mobile {
+  display: none;
+  @media (max-width: 760px) {
+    display: block;
+  }
+}
+.why {
+  padding-top: 90px;
   margin-bottom: 90px;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   gap: 40px;
   @media (max-width: 760px) {
     flex-direction: column;
     justify-content: start;
-    margin-top: 48px;
-    margin-bottom: 64px;
+    padding-top: 24px;
+    margin-bottom: 24px;
   }
 }
-.hero__left {
-  width: 50%;
-  max-width: 650px;
+.why__left {
+  width: 65%;
+  max-width: 580px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  @media (max-width: 1020px) {
+    width: 60%;
+  }
   @media (max-width: 760px) {
     width: 100%;
   }
   &-title {
-    font-size: 72px;
+    font-size: 52px;
     color: $black;
     font-weight: 700;
     line-height: 1.2;
     @media (max-width: 1200px) {
-      font-size: 44px;
+      font-size: 36px;
     }
   }
   &-description {
@@ -80,41 +106,27 @@ import UIButton from '../ui/UIButton.vue'
       font-size: 18px;
     }
   }
-  &-btns {
-    display: flex;
-    gap: 16px;
-    @media (max-width: 1200px) {
-      flex-direction: column;
-    }
-    .btn-primary {
-      @include btn-base($primary, #ffffff, $black);
-    }
-    .btn-secondary {
-      @include btn-base($secondary, $primary, $black-200);
-      border: none;
-    }
-  }
 }
-.hero__image {
-  width: 600px;
+.why__image {
+  width: 35%;
+  max-width: 460px;
   position: relative;
   display: flex;
-  justify-content: end;
-  padding-top: 52px;
-  @media (max-width: 1200px) {
-    width: 50%;
-  }
+  //@media (max-width: 1200px) {
+  //  width: 50%;
+  //}
   @media (max-width: 760px) {
     width: 100%;
   }
   &-main {
-    width: 480px;
-    height: 480px;
+    width: 316px;
+    height: 420px;
     overflow: hidden;
-    border-radius: 8px 8px 56px 8px;
-    @media (max-width: 1200px) {
-      width: 90%;
-      height: 90%;
+    border-radius: 120px 4px 60px 4px;
+    margin-bottom: 80px;
+    @media (max-width: 760px) {
+      //width: 90%;
+      //height: 90%;
     }
     img {
       width: 100%;
@@ -125,16 +137,17 @@ import UIButton from '../ui/UIButton.vue'
   }
   &-small {
     position: absolute;
-    border-radius: 8px;
+    border-radius: 2px 2px 120px 2px;
+    border: 1px solid $grey;
     z-index: 2;
-    top: 0;
-    left: 0;
-    width: 224px;
-    height: 224px;
+    bottom: 0;
+    right: 0;
+    width: 258px;
+    height: 258px;
     background-color: #e3eaf5;
-    @media (max-width: 760px) {
-      width: 154px;
-      height: 154px;
+    @media (max-width: 1020px) {
+      width: 184px;
+      height: 184px;
     }
   }
 
@@ -149,23 +162,27 @@ import UIButton from '../ui/UIButton.vue'
     }
   }
   &-stars {
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 500;
     position: absolute;
     left: 18px;
     top: 18px;
-    width: 34px;
+    width: 180px;
     height: auto;
     opacity: 0;
     transform: scale(0.4) translateY(-8px);
     animation: stars-appear 2s ease-out 1s forwards;
-    @media (max-width: 760px) {
+    @media (max-width: 1020px) {
       left: 8px;
       top: 9px;
-      width: 18px;
+      width: 125px;
+      font-size: 18px;
     }
   }
 
   /* SVG-графік */
-  .hero__image-graph {
+  .why__image-graph {
     position: absolute;
     left: 15px;
     bottom: 25px;
@@ -176,7 +193,7 @@ import UIButton from '../ui/UIButton.vue'
     transform: translateY(8px);
 
     animation: graph-fade-in 1s ease-out 1s forwards;
-    @media (max-width: 760px) {
+    @media (max-width: 1020px) {
       width: 125px;
     }
   }
