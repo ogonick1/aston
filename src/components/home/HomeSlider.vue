@@ -1,8 +1,8 @@
 <template>
   <h4 class="container license-title">DIFC license categories</h4>
-  <div class="container license-slider" @mouseenter="pauseAutoplay" @mouseleave="resumeAutoplay">
+  <div class="container license-slider">
     <!-- Ліва колонка з заголовками -->
-    <div class="license-slider__sidebar">
+    <div class="license-slider__sidebar mobile-hidden">
       <div
         v-for="(slide, index) in slides"
         :key="slide.id"
@@ -17,17 +17,43 @@
           {{ slide.title }}
         </div>
 
-        <!-- активна підкреслена лінія -->
         <div class="license-slider__underline"></div>
       </div>
     </div>
 
     <!-- Права частина з карткою -->
-    <div class="license-slider__content" :class="{ hovered: isHovered }">
+    <div
+      class="license-slider__content mobile-hidden"
+      :class="{ hovered: isHovered }"
+      @mouseenter="pauseAutoplay"
+      @mouseleave="resumeAutoplay"
+    >
       <Transition name="fade" mode="out-in">
         <div v-if="currentSlide" :key="currentSlide.id" class="license-card">
           <div class="license-card__media">
-            <SlideMediaCollage :slide="currentSlide.id" />
+            <!--<SlideMediaCollage :slide="currentSlide.id" />-->
+            <SlideMediaCollage
+              v-if="currentSlide.id % 2 !== 0"
+              :image1="currentSlide.image1"
+              :image2="currentSlide.image2"
+              :iconSrc="currentSlide.iconSrc"
+              :iconSrc2="currentSlide?.iconSrc2"
+              :cardDescription="currentSlide.cardDescription"
+              :cardLabel="currentSlide.cardLabel"
+              :cardDescription2="currentSlide.cardDescription2"
+              :slide="currentSlide.id"
+            />
+            <SlideMediaCollage2
+              v-else
+              :image1="currentSlide.image1"
+              :image2="currentSlide.image2"
+              :iconSrc="currentSlide.iconSrc"
+              :iconSrc2="currentSlide?.iconSrc2"
+              :cardDescription="currentSlide.cardDescription"
+              :cardLabel="currentSlide.cardLabel"
+              :cardDescription2="currentSlide.cardDescription2"
+              :slide="currentSlide.id"
+            />
           </div>
 
           <div class="license-card__body">
@@ -40,7 +66,7 @@
                   {{ currentSlide.title }}
                 </h4>
               </div>
-              <div>
+              <div class="mobile-hidden">
                 <UIButton
                   @mouseenter="isHovered = true"
                   @mouseleave="isHovered = false"
@@ -52,9 +78,77 @@
             <p class="license-card__description">
               {{ currentSlide.description }}
             </p>
+            <div class="desktop-hidden">
+              <UIButton
+                @mouseenter="isHovered = true"
+                @mouseleave="isHovered = false"
+                label="Learn more"
+              />
+            </div>
           </div>
         </div>
       </Transition>
+    </div>
+
+        <div
+      class="license-slider__content desktop-hidden"
+    >
+        <div v-for="currentSlide in slides" :key="currentSlide.id" class="license-card">
+          <div class="license-card__media">
+            <!--<SlideMediaCollage :slide="currentSlide.id" />-->
+            <SlideMediaCollage
+              v-if="currentSlide.id % 2 !== 0"
+              :image1="currentSlide.image1"
+              :image2="currentSlide.image2"
+              :iconSrc="currentSlide.iconSrc"
+              :iconSrc2="currentSlide?.iconSrc2"
+              :cardDescription="currentSlide.cardDescription"
+              :cardLabel="currentSlide.cardLabel"
+              :cardDescription2="currentSlide.cardDescription2"
+              :slide="currentSlide.id"
+            />
+            <SlideMediaCollage2
+              v-else
+              :image1="currentSlide.image1"
+              :image2="currentSlide.image2"
+              :iconSrc="currentSlide.iconSrc"
+              :iconSrc2="currentSlide?.iconSrc2"
+              :cardDescription="currentSlide.cardDescription"
+              :cardLabel="currentSlide.cardLabel"
+              :cardDescription2="currentSlide.cardDescription2"
+              :slide="currentSlide.id"
+            />
+          </div>
+
+          <div class="license-card__body">
+            <div class="license-card__body-top">
+              <div>
+                <p class="license-card__category">
+                  {{ currentSlide.label }}
+                </p>
+                <h4 class="license-card__title">
+                  {{ currentSlide.title }}
+                </h4>
+              </div>
+              <div class="mobile-hidden">
+                <UIButton
+                  @mouseenter="isHovered = true"
+                  @mouseleave="isHovered = false"
+                  label="Learn more"
+                />
+              </div>
+            </div>
+            <div class="divider"></div>
+            <p class="license-card__description">
+              {{ currentSlide.description }}
+            </p>
+            <div class="desktop-hidden">
+              <UIButton
+                label="Learn more"
+              />
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </template>
@@ -63,6 +157,7 @@
 import { computed, onMounted, ref, onBeforeUnmount } from 'vue'
 import SlideMediaCollage from '../ui/SlideMediaCollage.vue'
 import UIButton from '../ui/UIButton.vue'
+import SlideMediaCollage2 from '../ui/SlideMediaCollage2.vue'
 
 const slides = [
   {
@@ -71,6 +166,12 @@ const slides = [
     title: 'Full banking',
     description:
       'Licensed to operate as a fully regulated bank in DIFC with deposit-taking, lending, and credit facilities under DFSA oversight.',
+    image1: '/icons/slider/slide_117.jpg',
+    image2: '/icons/slider/slide_118.jpg',
+    iconSrc: '/icons/tax.png',
+    cardDescription: 'Banking services in DIFC',
+    cardLabel: '$10M+',
+    cardDescription2: 'Paid-up capital',
   },
   {
     id: 2,
@@ -78,6 +179,13 @@ const slides = [
     title: 'Trading & asset management',
     description:
       'Deliver professional investment management and trading operations in DIFC, serving institutional and high-net-worth clients without taking custody of client assets.',
+    image1: '/icons/slider/slide-119.jpg',
+    image2: '/icons/slider/slide-120.jpg',
+    iconSrc: '/icons/exchange.png',
+    iconSrc2: '/icons/up.png',
+    cardDescription: 'Proprietary trading desks',
+    cardLabel: '',
+    cardDescription2: 'Hedge funds',
   },
   {
     id: 3,
@@ -85,6 +193,12 @@ const slides = [
     title: 'Investment advisory',
     description:
       'Licensed to arrange and advise on investments in DIFC without custody of client funds, under DFSA oversight.',
+    image1: '/icons/slider/slide-121.jpg',
+    image2: '/icons/slider/slide-122.jpg',
+    iconSrc: '/icons/discount.png',
+    cardDescription: 'Financial arrangers',
+    cardLabel: '$250k+',
+    cardDescription2: 'Capital',
   },
   {
     id: 4,
@@ -92,6 +206,13 @@ const slides = [
     title: 'Principal Trading',
     description:
       'Licensed to trade investments as principal in DIFC using own balance sheet, operating as dealer or market maker under DFSA oversight.',
+    image1: '/icons/slider/slide-124.jpg',
+    image2: '/icons/slider/slide-123.jpg',
+    iconSrc: '/icons/Manager.png',
+    iconSrc2: '/icons/Bank.png',
+    cardDescription: 'Deal arranging & advisory',
+    cardLabel: '',
+    cardDescription2: 'Investment intermediation',
   },
   {
     id: 5,
@@ -99,6 +220,12 @@ const slides = [
     title: 'Proprietary trading',
     description:
       'Licensed to conduct proprietary and crypto trading in DIFC using own capital, without holding client funds, under DFSA oversight.',
+    image1: '/icons/slider/slide-125.jpg',
+    image2: '/icons/slider/slide-126.jpg',
+    iconSrc: '/icons/invest-money.png',
+    cardDescription: 'Payment services',
+    cardLabel: '$250k+',
+    cardDescription2: 'Capital',
   },
   {
     id: 6,
@@ -106,6 +233,13 @@ const slides = [
     title: 'Advisory & arranging',
     description:
       'Provide financial advice and arrange investment services without handling client funds',
+    image1: '/icons/slider/slide-127.jpg',
+    image2: '/icons/slider/slide-128.jpg',
+    iconSrc: '/icons/Manager.png',
+    //iconSrc2: '/icons/Bank.png',
+    cardDescription: 'Advisory & arranging',
+    cardLabel: '$10k-50k',
+    cardDescription2: 'Capital',
   },
   {
     id: 7,
@@ -113,6 +247,12 @@ const slides = [
     title: 'Fund Management',
     description:
       'Authorized to provide comprehensive financial services in DIFC, offering corporate banking, lending, and capital solutions under full DFSA regulation.',
+    image1: '/icons/slider/slide-129.jpg',
+    image2: '/icons/slider/slide-130.jpg',
+    iconSrc: '/icons/tax.png',
+    cardDescription: 'Fund management',
+    cardLabel: '$500k+',
+    cardDescription2: 'Capital',
   },
 ]
 
@@ -160,6 +300,13 @@ const isHovered = ref(false)
   margin-bottom: 80px;
   font-size: 52px;
   color: $black;
+  line-height: 1.2;
+  @media (max-width: 760px) {
+    font-size: 36px;
+    margin-top: 72px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
 }
 .license-slider {
   display: grid;
@@ -167,6 +314,16 @@ const isHovered = ref(false)
   gap: 40px;
   margin: 0 auto;
   margin-bottom: 90px;
+  @media (max-width: 1020px) {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 760px) {
+    margin-bottom: 50px;
+    grid-template-columns: 1fr;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
 }
 
 /* Ліва колонка */
@@ -180,6 +337,8 @@ const isHovered = ref(false)
   cursor: pointer;
   position: relative;
   border-bottom: 1px solid $grey;
+  @media (max-width: 760px) {
+  }
 }
 
 .license-slider__item-label {
@@ -188,6 +347,12 @@ const isHovered = ref(false)
   text-transform: uppercase;
   color: $small-text;
   margin-bottom: 10px;
+  @media (max-width: 1020px) {
+    font-size: 12px;
+  }
+  @media (max-width: 760px) {
+    font-size: 12px;
+  }
 }
 
 .license-slider__item-title {
@@ -196,6 +361,13 @@ const isHovered = ref(false)
   line-height: 1.2;
   color: $small-text;
   white-space: nowrap;
+  @media (max-width: 1020px) {
+    white-space: wrap;
+    font-size: 18px;
+  }
+
+  @media (max-width: 760px) {
+  }
 }
 
 .license-slider__item--active .license-slider__item-title {
@@ -229,6 +401,12 @@ const isHovered = ref(false)
   border-radius: 16px;
   padding: 30px;
   transition: all 0.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap:40px;
+  @media (max-width: 1020px) {
+    padding: 16px;
+  }
 }
 .license-slider__content.hovered {
   background: #e3eaf5;
@@ -239,12 +417,17 @@ const isHovered = ref(false)
   display: flex;
   flex-direction: column;
   gap: 40px;
+  @media (max-width: 1020px) {
+    gap: 20px;
+  }
 }
 
 /* Media блок */
 .license-card__media {
   width: 100%;
   height: 342px;
+  @media (max-width: 1020px) {
+  }
 }
 
 /* Текстова частина */
@@ -258,6 +441,10 @@ const isHovered = ref(false)
   display: flex;
   justify-content: space-between;
   gap: 18px;
+  @media (max-width: 1020px) {
+    flex-direction: column;
+    gap: 0;
+  }
 }
 
 .license-card__category {
@@ -274,12 +461,40 @@ const isHovered = ref(false)
   line-height: 1.2;
   margin: 0 0 18px;
   color: $black;
+  @media (max-width: 1020px) {
+    font-size: 28px;
+  }
+  @media (max-width: 760px) {
+    margin: 0;
+  }
 }
 
 .license-card__description {
   font-size: 18px;
   line-height: 1.5;
   color: $small-text;
+  @media (max-width: 1020px) {
+    font-size: 16px;
+  }
+}
+.desktop-hidden {
+  display: none ;
+  button {
+    width: 100%;
+    max-height: 40px;
+  }
+  @media (max-width: 760px) {
+    display: flex;
+  }
+}
+.mobile-hidden {
+  @media (max-width: 760px) {
+    display: none;
+  }
+}
+.divider {
+  height: 1px;
+  background-color: $black;
 }
 
 /* Анімація */
@@ -292,25 +507,5 @@ const isHovered = ref(false)
   opacity: 0;
 }
 
-/* Адаптив */
-//@media (max-width: 900px) {
-//  .license-slider {
-//    grid-template-columns: 1fr;
-//  }
-//  .license-slider__sidebar {
-//    order: 1;
-//    display: flex;
-//    flex-direction: row;
-//    overflow-x: auto;
-//  }
-//  .license-slider__item {
-//    margin-right: 20px;
-//  }
-//  .license-slider__content {
-//    order: 2;
-//  }
-//  .license-card {
-//    grid-template-columns: 1fr;
-//  }
-//}
+
 </style>
