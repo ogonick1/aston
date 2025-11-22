@@ -64,6 +64,7 @@ import UIButton from '../ui/UIButton.vue'
     width: 100%;
   }
   &-title {
+    @include header;
     font-size: 72px;
     color: $black;
     font-weight: 700;

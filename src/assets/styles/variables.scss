@@ -1,15 +1,14 @@
-  $white-color: #ffffff;
-  $grey: #F5F7FA;
-  $small-text: #3C414A;
-  $black: #111C2E;
-  $black-200:#B3BBC2;
-  $primary: #062150;
-  $secondary: #E3EAF5;
-  $accent: #FF6000;
-  $peach-bg: #FBF5F1;
+$white-color: #ffffff;
+$grey: #f5f7fa;
+$small-text: #3c414a;
+$black: #111c2e;
+$black-200: #b3bbc2;
+$primary: #062150;
+$secondary: #e3eaf5;
+$accent: #ff6000;
+$peach-bg: #fbf5f1;
 
-
-  @mixin btn-base($bg, $color: #ffffff, $hover-bg: $black) {
+@mixin btn-base($bg, $color: #ffffff, $hover-bg: $black) {
   background: $bg;
   color: $color;
   font-weight: 500;
@@ -19,5 +18,15 @@
   &:hover {
     background-color: $hover-bg;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@mixin header {
+  font-family: 'PTSerif';
+  line-height: 1.2;
+  font-size: 52px;
+  font-weight: 700;
+  @media (max-width: 760px) {
+    font-size: 36px;
   }
 }

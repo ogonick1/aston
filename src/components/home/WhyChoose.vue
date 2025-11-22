@@ -90,6 +90,7 @@ const benefits = [
     width: 100%;
   }
   &-title {
+    @include header;
     font-size: 52px;
     color: $black;
     font-weight: 700;

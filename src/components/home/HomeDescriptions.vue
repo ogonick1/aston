@@ -65,6 +65,7 @@
     }
   }
   &-description-big {
+    font-family: 'PTSerif';
     font-size: 24px;
     color: $black;
     font-weight: 700;

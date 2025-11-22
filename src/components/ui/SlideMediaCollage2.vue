@@ -302,6 +302,7 @@ defineProps({
 }
 
 .media-title-big {
+  font-family: 'PTSerif';
   font-size: 22px;
 }
 

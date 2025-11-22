@@ -251,12 +251,6 @@ const offices = [
     flex-wrap: wrap;
   }
 
-  //margin-top: 72px;
-  //display: flex;
-  //gap: 40px;
-  //justify-content: space-between;
-  //align-items: flex-start;
-  //flex-wrap: wrap;
 }
 
 /* LEFT SIDE: logo + social */

@@ -5,9 +5,9 @@
         <img src="/strategically.png" alt="home img" />
       </div>
       <div class="home__right">
-        <div class="home__right-description-big">
+        <h3 class="home__right-description-big">
           Strategically located in Dubai’s financial epicenter
-        </div>
+        </h3>
         <CheckList :items="check" icon="/icons/check.svg" />
         <div class="home__right-description">
           Whether you are building a private wealth firm, launching a fintech venture, or opening a regulated fund, DIFC provides the framework and support needed to operate legally and competitively.

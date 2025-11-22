@@ -17,7 +17,7 @@
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
 
-const SPEED_PX_PER_SEC = 25 // швидкість руху
+const SPEED_PX_PER_SEC = 25
 
 const wrap = ref(null)
 const track = ref(null)

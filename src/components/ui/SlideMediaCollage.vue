@@ -206,6 +206,7 @@ defineProps({
 }
 
 .media-title-big {
+  font-family: 'PTSerif';
   font-size: 36px;
   font-weight: 400;
   margin-bottom: 8px;
@@ -311,6 +312,7 @@ defineProps({
 }
 
 .media-title-big {
+  font-family: 'PTSerif';
   font-size: 22px;
 }
 

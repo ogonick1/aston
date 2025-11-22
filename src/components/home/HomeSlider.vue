@@ -1,7 +1,6 @@
 <template>
   <h4 class="container license-title">DIFC license categories</h4>
   <div class="container license-slider">
-    <!-- Ліва колонка з заголовками -->
     <div class="license-slider__sidebar mobile-hidden">
       <div
         v-for="(slide, index) in slides"
@@ -21,7 +20,6 @@
       </div>
     </div>
 
-    <!-- Права частина з карткою -->
     <div
       class="license-slider__content mobile-hidden"
       :class="{ hovered: isHovered }"
@@ -31,7 +29,6 @@
       <Transition name="fade" mode="out-in">
         <div v-if="currentSlide" :key="currentSlide.id" class="license-card">
           <div class="license-card__media">
-            <!--<SlideMediaCollage :slide="currentSlide.id" />-->
             <SlideMediaCollage
               v-if="currentSlide.id % 2 !== 0"
               :image1="currentSlide.image1"
@@ -95,7 +92,6 @@
     >
         <div v-for="currentSlide in slides" :key="currentSlide.id" class="license-card">
           <div class="license-card__media">
-            <!--<SlideMediaCollage :slide="currentSlide.id" />-->
             <SlideMediaCollage
               v-if="currentSlide.id % 2 !== 0"
               :image1="currentSlide.image1"
@@ -296,6 +292,7 @@ const isHovered = ref(false)
 
 <style scoped lang="scss">
 .license-title {
+  @include header;
   margin-top: 90px;
   margin-bottom: 80px;
   font-size: 52px;
@@ -356,6 +353,7 @@ const isHovered = ref(false)
 }
 
 .license-slider__item-title {
+  font-family: 'PTSerif';
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
@@ -456,6 +454,7 @@ const isHovered = ref(false)
 }
 
 .license-card__title {
+  font-family: 'PTSerif';
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
