@@ -42,6 +42,7 @@ const check = [
   gap: 40px;
   @media (max-width: 760px) {
     flex-direction: column;
+    justify-content: start;
   }
 }
 .home__right {
