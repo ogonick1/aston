@@ -1,7 +1,7 @@
 <template>
   <ul class="check-list">
     <li v-for="(item, index) in items" :key="index" class="check-list__item" data-aos="zoom-in">
-      <img class="check-list__icon" :src="icon" alt="check icon" />
+      <img class="check-list__icon" src="/icons/check.svg" alt="check icon" />
 
       <span class="check-list__text">
         {{ item }}

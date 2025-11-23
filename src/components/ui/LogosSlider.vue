@@ -23,14 +23,14 @@ const wrap = ref(null)
 const track = ref(null)
 
 const logos = [
-  { src: '/logos/dmcc.png', alt: 'DMCC' },
-  { src: '/logos/ifza.png', alt: 'IFZA' },
-  { src: '/logos/dubai-economy.png', alt: 'Dubai Economy' },
-  { src: '/logos/uae.png', alt: 'UAE' },
-  { src: '/logos/dmcc.png', alt: 'DMCC' },
-  { src: '/logos/ifza.png', alt: 'IFZA' },
-  { src: '/logos/dubai-economy.png', alt: 'Dubai Economy' },
-  { src: '/logos/uae.png', alt: 'UAE' },
+  { src: '/dmcc.png', alt: 'DMCC' },
+  { src: '/ifza.png', alt: 'IFZA' },
+  { src: '/dubai-economy.png', alt: 'Dubai Economy' },
+  { src: '/uae.png', alt: 'UAE' },
+  { src: '/dmcc.png', alt: 'DMCC' },
+  { src: '/ifza.png', alt: 'IFZA' },
+  { src: '/dubai-economy.png', alt: 'Dubai Economy' },
+  { src: '/uae.png', alt: 'UAE' },
 ]
 
 onMounted(() => {

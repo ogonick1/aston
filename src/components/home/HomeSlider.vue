@@ -155,6 +155,30 @@ import SlideMediaCollage from '../ui/SlideMediaCollage.vue'
 import UIButton from '../ui/UIButton.vue'
 import SlideMediaCollage2 from '../ui/SlideMediaCollage2.vue'
 
+import slide117 from '@/assets/icons/slide_117.jpg'
+import slide118 from '@/assets/icons/slide_118.jpg'
+import slide119 from '@/assets/icons/slide-119.jpg'
+import slide120 from '@/assets/icons/slide-120.jpg'
+import slide121 from '@/assets/icons/slide-121.jpg'
+import slide122 from '@/assets/icons/slide-122.jpg'
+import slide124 from '@/assets/icons/slide-124.jpg'
+import slide123 from '@/assets/icons/slide-123.jpg'
+import slide125 from '@/assets/icons/slide-125.jpg'
+import slide126 from '@/assets/icons/slide-126.jpg'
+import slide127 from '@/assets/icons/slide-127.jpg'
+import slide128 from '@/assets/icons/slide-128.jpg'
+import slide129 from '@/assets/icons/slide-129.jpg'
+import slide130 from '@/assets/icons/slide-130.jpg'
+
+// ICONS
+import iconTax from '@/assets/icons/tax.png'
+import iconExchange from '@/assets/icons/exchange.png'
+import iconUp from '@/assets/icons/up.png'
+import iconDiscount from '@/assets/icons/discount.png'
+import iconManager from '@/assets/icons/Manager.png'
+import iconBank from '@/assets/icons/Bank.png'
+import iconInvest from '@/assets/icons/invest-money.png'
+
 const props = defineProps({
   modelValue: {
     type: Number,
@@ -164,7 +188,6 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue'])
 
-
 const slides = [
   {
     id: 1,
@@ -172,9 +195,9 @@ const slides = [
     title: 'Full banking',
     description:
       'Licensed to operate as a fully regulated bank in DIFC with deposit-taking, lending, and credit facilities under DFSA oversight.',
-    image1: '/icons/slide_117.jpg',
-    image2: '/icons/slide_118.jpg',
-    iconSrc: '/icons/tax.png',
+    image1: slide117,
+    image2: slide118,
+    iconSrc: iconTax,
     cardDescription: 'Banking services in DIFC',
     cardLabel: '$10M+',
     cardDescription2: 'Paid-up capital',
@@ -185,10 +208,10 @@ const slides = [
     title: 'Trading & asset management',
     description:
       'Deliver professional investment management and trading operations in DIFC, serving institutional and high-net-worth clients without taking custody of client assets.',
-    image1: '/icons/slide-119.jpg',
-    image2: '/icons/slide-120.jpg',
-    iconSrc: '/icons/exchange.png',
-    iconSrc2: '/icons/up.png',
+    image1: slide119,
+    image2: slide120,
+    iconSrc: iconExchange,
+    iconSrc2: iconUp,
     cardDescription: 'Proprietary trading desks',
     cardLabel: '',
     cardDescription2: 'Hedge funds',
@@ -199,9 +222,9 @@ const slides = [
     title: 'Investment advisory',
     description:
       'Licensed to arrange and advise on investments in DIFC without custody of client funds, under DFSA oversight.',
-    image1: '/icons/slide-121.jpg',
-    image2: '/icons/slide-122.jpg',
-    iconSrc: '/icons/discount.png',
+    image1: slide121,
+    image2: slide122,
+    iconSrc: iconDiscount,
     cardDescription: 'Financial arrangers',
     cardLabel: '$250k+',
     cardDescription2: 'Capital',
@@ -212,10 +235,10 @@ const slides = [
     title: 'Principal Trading',
     description:
       'Licensed to trade investments as principal in DIFC using own balance sheet, operating as dealer or market maker under DFSA oversight.',
-    image1: '/icons/slide-124.jpg',
-    image2: '/icons/slide-123.jpg',
-    iconSrc: '/icons/Manager.png',
-    iconSrc2: '/icons/Bank.png',
+    image1: slide124,
+    image2: slide123,
+    iconSrc: iconManager,
+    iconSrc2: iconBank,
     cardDescription: 'Deal arranging & advisory',
     cardLabel: '',
     cardDescription2: 'Investment intermediation',
@@ -226,9 +249,9 @@ const slides = [
     title: 'Proprietary trading',
     description:
       'Licensed to conduct proprietary and crypto trading in DIFC using own capital, without holding client funds, under DFSA oversight.',
-    image1: '/icons/slide-125.jpg',
-    image2: '/icons/slide-126.jpg',
-    iconSrc: '/icons/invest-money.png',
+    image1: slide125,
+    image2: slide126,
+    iconSrc: iconInvest,
     cardDescription: 'Payment services',
     cardLabel: '$250k+',
     cardDescription2: 'Capital',
@@ -239,10 +262,9 @@ const slides = [
     title: 'Advisory & arranging',
     description:
       'Provide financial advice and arrange investment services without handling client funds',
-    image1: '/icons/slide-127.jpg',
-    image2: '/icons/slide-128.jpg',
-    iconSrc: '/icons/Manager.png',
-    //iconSrc2: '/icons/Bank.png',
+    image1: slide127,
+    image2: slide128,
+    iconSrc: iconManager,
     cardDescription: 'Advisory & arranging',
     cardLabel: '$10k-50k',
     cardDescription2: 'Capital',
@@ -253,14 +275,15 @@ const slides = [
     title: 'Fund Management',
     description:
       'Authorized to provide comprehensive financial services in DIFC, offering corporate banking, lending, and capital solutions under full DFSA regulation.',
-    image1: '/icons/slide-129.jpg',
-    image2: '/icons/slide-130.jpg',
-    iconSrc: '/icons/tax.png',
+    image1: slide129,
+    image2: slide130,
+    iconSrc: iconTax,
     cardDescription: 'Fund management',
     cardLabel: '$500k+',
     cardDescription2: 'Capital',
   },
 ]
+
 
 const activeIndex = ref(props.modelValue)
 

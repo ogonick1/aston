@@ -25,23 +25,23 @@
       <div class="legal-entities__right">
         <UILegalCard
           title="Private Company Limited by Shares (Ltd.)"
-          icon="/icons/user.svg"
+          :icon="userIcon"
           variant="light"
         />
         <UILegalCard
           title="Limited Liability Partnership (LLP)"
-          icon="/icons/hands.svg"
+          :icon="handsIcon"
           variant="peach"
         />
-        <UILegalCard title="General Partnership" icon="/icons/globe.svg" variant="peach" />
+        <UILegalCard title="General Partnership" :icon="globeIcon" variant="peach" />
         <UILegalCard
           title="Special Purpose Company (SPC)"
-          icon="/icons/target.svg"
+          :icon="targetIcon"
           variant="light"
         />
         <UILegalCard
           title="Branch of an existing UAE or foreign company"
-          icon="/icons/case.png"
+          :icon="caseIcon"
           variant="light"
           :wide="true"
         />
@@ -52,6 +52,11 @@
 
 <script setup>
 import UILegalCard from '@/components/ui/UILegalCard.vue'
+import userIcon from '@/assets/icons/user.svg'
+import handsIcon from '@/assets/icons/hands.svg'
+import globeIcon from '@/assets/icons/globe.svg'
+import targetIcon from '@/assets/icons/target.svg'
+import caseIcon from '@/assets/icons/case.png'
 </script>
 
 <style scoped lang="scss">

@@ -109,108 +109,130 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import CorporateVisual from '../ui/CorporateVisual.vue'
+import iconBuild from '@/assets/icons/build.svg'
+import iconHands from '@/assets/icons/hands.svg'
+import iconPeople from '@/assets/icons/people.svg'
+import iconDocuments from '@/assets/icons/Documents.png'
+import iconPlanning from '@/assets/icons/Planning.png'
+import iconDiamond from '@/assets/icons/Diamond.png'
+
+// SLIDER IMAGES
+import slide131 from '@/assets/icons/slide-131.jpg'
+import slide132 from '@/assets/icons/slide-132.jpg'
+import slide133 from '@/assets/icons/slide-133.jpg'
+import slide134 from '@/assets/icons/slide-134.jpg'
+import slide135 from '@/assets/icons/slide-135.jpg'
 
 const tabs = [
   {
     id: 1,
     title: 'Structuring',
-    subtitle: 'Structures for holding assets, isolating risks, and conducting trading activities.',
-    icon: '/icons/build.svg',
-    image: '/images/difc-structuring.jpg',
+    subtitle:
+      'Structures for holding assets, isolating risks, and conducting trading activities.',
+    icon: iconBuild,
     badge: 'Corporate vehicle options',
     cardTopLabel: 'DIFC',
     cardTitle: 'Holding structure',
     cardBottomLabel: 'Holding structure',
-    leftImage: '/icons/slide-131.jpg',
-    cardOneIcon: '/icons/Documents.png',
+    leftImage: slide131,
+    cardOneIcon: iconDocuments,
     cardOneTitle: 'Corporate vehicle options',
     cardTwoTitle: 'DIFC',
     cardTwoSubtitle: 'Holding structure',
-    rightImage: '/icons/slide-132.jpg',
-    cardTwoIcon: '/icons/Planning.png',
+    rightImage: slide132,
+    cardTwoIcon: iconPlanning,
     items: [
       {
         id: 'holding-company',
         title: 'DIFC holding company setup',
-        description: 'A straightforward entity to hold assets and shares in other companies.',
+        description:
+          'A straightforward entity to hold assets and shares in other companies.',
       },
       {
         id: 'spc',
         title: 'DIFC special purpose company (SPC)',
-        description: 'A ring-fenced entity designed for specific deals or risk structuring.',
+        description:
+          'A ring-fenced entity designed for specific deals or risk structuring.',
       },
       {
         id: 'proprietary-trading',
         title: 'DIFC proprietary trading company',
-        description: 'A company to trade on its own account within DIFC.',
+        description:
+          'A company to trade on its own account within DIFC.',
       },
     ],
   },
+
   {
     id: 2,
     title: 'Finance',
     subtitle:
       'Infrastructure for managing investment funds, financial services, and digital assets.',
-    icon: '/icons/hands.svg',
-    image: '/images/difc-finance.jpg',
+    icon: iconHands,
     badge: 'Corporate vehicle options',
     cardTopLabel: 'DIFC',
     cardTitle: 'Financial services',
     cardBottomLabel: 'Fund & asset management',
-    leftImage: '/icons/slide-133.jpg',
-    cardOneIcon: '/icons/Diamond.png',
+    leftImage: slide133,
+    cardOneIcon: iconDiamond,
     cardOneTitle: 'Fintech & virtual assets',
     cardTwoTitle: '',
     cardTwoSubtitle: '',
-    rightImage: '/icons/slide-132.jpg',
-    cardTwoIcon: '/icons/Planning.png',
+    rightImage: slide132,
+    cardTwoIcon: iconPlanning,
     cardOneSubtitle: '',
     items: [
       {
         id: 'fund',
-        title: 'DIFC fintech sandbox and innovation testing license (ITL)',
-        description: 'Test new fintech products with lighter regulatory requirements.',
+        title:
+          'DIFC fintech sandbox and innovation testing license (ITL)',
+        description:
+          'Test new fintech products with lighter regulatory requirements.',
       },
       {
         id: 'fin-company',
         title: 'DIFC crypto license',
-        description: 'Authorisation to carry out virtual asset activities in DIFC.',
+        description:
+          'Authorisation to carry out virtual asset activities in DIFC.',
       },
       {
         id: 'fin-tech',
         title: 'DIFC fund registration',
-        description: 'Register and manage a fund under the DIFC framework.',
+        description:
+          'Register and manage a fund under the DIFC framework.',
       },
     ],
   },
+
   {
     id: 3,
     title: 'Wealth',
-    subtitle: 'Tools for managing family wealth, succession, and asset protection.',
-    icon: '/icons/people.svg',
-    image: '/images/difc-wealth.jpg',
+    subtitle:
+      'Tools for managing family wealth, succession, and asset protection.',
+    icon: iconPeople,
     badge: 'Corporate vehicle options',
     cardTopLabel: 'DIFC',
     cardTitle: 'Wealth planning',
     cardBottomLabel: 'Family & private office',
-    leftImage: '/icons/slide-134.jpg',
-    cardOneIcon: '/icons/Documents.png',
+    leftImage: slide134,
+    cardOneIcon: iconDocuments,
     cardOneTitle: 'DIFC',
-    //cardTwoTitle: '',
     cardTwoSubtitle: 'Wealth planning solutions',
-    rightImage: '/icons/slide-135.jpg',
-    cardTwoIcon: '/icons/Planning.png',
+    rightImage: slide135,
+    cardTwoIcon: iconPlanning,
     cardOneSubtitle: 'Estate planning',
     items: [
       {
         id: 'foundation',
         title: 'DIFC family office setup',
-        description: 'Establish a single- or multi-family office in DIFC.',
+        description:
+          'Establish a single- or multi-family office in DIFC.',
       },
       {
         id: 'family-office',
         title: 'DIFC foundations',
-        description: 'A flexible structure for asset holding and succession planning.',
+        description:
+          'A flexible structure for asset holding and succession planning.',
       },
       {
         id: 'multi-family-office',
@@ -221,6 +243,7 @@ const tabs = [
     ],
   },
 ]
+
 
 const activeTabId = ref(tabs[0].id)
 const activeTab = computed(() => tabs.find((tab) => tab.id === activeTabId.value))
