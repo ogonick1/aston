@@ -16,22 +16,27 @@
 
 <script setup>
 import { onMounted, onBeforeUnmount, ref } from 'vue'
+import logoDmcc from '@/assets/icons/dmcc.png'
+import logoIfza from '@/assets/icons/ifza.png'
+import logoDubai from '@/assets/icons/dubai-economy.png'
+import logoUae from '@/assets/icons/uae.png'
 
-const SPEED_PX_PER_SEC = 25
+const SPEED_PX_PER_SEC = 20
 
 const wrap = ref(null)
 const track = ref(null)
 
 const logos = [
-  { src: '/dmcc.png', alt: 'DMCC' },
-  { src: '/ifza.png', alt: 'IFZA' },
-  { src: '/dubai-economy.png', alt: 'Dubai Economy' },
-  { src: '/uae.png', alt: 'UAE' },
-  { src: '/dmcc.png', alt: 'DMCC' },
-  { src: '/ifza.png', alt: 'IFZA' },
-  { src: '/dubai-economy.png', alt: 'Dubai Economy' },
-  { src: '/uae.png', alt: 'UAE' },
+  { src: logoDmcc, alt: 'DMCC' },
+  { src: logoIfza, alt: 'IFZA' },
+  { src: logoDubai, alt: 'Dubai Economy' },
+  { src: logoUae, alt: 'UAE' },
+  { src: logoDmcc, alt: 'DMCC' },
+  { src: logoIfza, alt: 'IFZA' },
+  { src: logoDubai, alt: 'Dubai Economy' },
+  { src: logoUae, alt: 'UAE' },
 ]
+
 
 onMounted(() => {
   const w = wrap.value
