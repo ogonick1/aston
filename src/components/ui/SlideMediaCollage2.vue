@@ -44,11 +44,11 @@ defineProps({
   },
   image1: {
     type: String,
-    default : '/icons/slider/slide_117.jpg'
+    default : '/icons/slide_117.jpg'
   },
   image2: {
     type: String,
-    default : '/icons/slider/slide_118.jpg'
+    default : '/icons/slide_118.jpg'
   },
   iconSrc: {
     type: String,

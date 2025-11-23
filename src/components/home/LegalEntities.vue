@@ -25,23 +25,23 @@
       <div class="legal-entities__right">
         <UILegalCard
           title="Private Company Limited by Shares (Ltd.)"
-          icon="/icons/legal/user.svg"
+          icon="/icons/user.svg"
           variant="light"
         />
         <UILegalCard
           title="Limited Liability Partnership (LLP)"
-          icon="/icons/legal/hands.svg"
+          icon="/icons/hands.svg"
           variant="peach"
         />
-        <UILegalCard title="General Partnership" icon="/icons/legal/globe.svg" variant="peach" />
+        <UILegalCard title="General Partnership" icon="/icons/globe.svg" variant="peach" />
         <UILegalCard
           title="Special Purpose Company (SPC)"
-          icon="/icons/legal/target.svg"
+          icon="/icons/target.svg"
           variant="light"
         />
         <UILegalCard
           title="Branch of an existing UAE or foreign company"
-          icon="/icons/legal/case.png"
+          icon="/icons/case.png"
           variant="light"
           :wide="true"
         />
