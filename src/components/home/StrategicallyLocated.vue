@@ -75,17 +75,17 @@ const check = [
 }
 .home__image {
   width: 460px;
-  height: 490px;
+  //height: 490px;
   @media (max-width: 1200px) {
     width: 50%;
-    height: -webkit-fill-available;
+    //height: -webkit-fill-available;
   }
   @media (max-width: 760px) {
     width: 100%;
   }
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     display: block;
   }
