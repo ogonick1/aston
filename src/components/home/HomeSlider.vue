@@ -150,10 +150,20 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref, onBeforeUnmount } from 'vue'
+import { computed, onMounted, ref, onBeforeUnmount, watch } from 'vue'
 import SlideMediaCollage from '../ui/SlideMediaCollage.vue'
 import UIButton from '../ui/UIButton.vue'
 import SlideMediaCollage2 from '../ui/SlideMediaCollage2.vue'
+
+const props = defineProps({
+  modelValue: {
+    type: Number,
+    default: 0,
+  },
+})
+
+const emit = defineEmits(['update:modelValue'])
+
 
 const slides = [
   {
@@ -252,7 +262,20 @@ const slides = [
   },
 ]
 
-const activeIndex = ref(0)
+const activeIndex = ref(props.modelValue)
+
+// коли батько міняє v-model → оновлюємо локальний activeIndex
+watch(
+  () => props.modelValue,
+  (val) => {
+    if (val !== activeIndex.value) activeIndex.value = val
+  },
+)
+
+// коли всередині слайдера змінюється activeIndex → віддаємо нагору
+watch(activeIndex, (val) => {
+  emit('update:modelValue', val)
+})
 
 const currentSlide = computed(() => slides[activeIndex.value])
 
@@ -280,6 +303,7 @@ function pauseAutoplay() {
 function resumeAutoplay() {
   startAutoplay()
 }
+
 function setActive(index) {
   activeIndex.value = index
   startAutoplay()
@@ -287,6 +311,7 @@ function setActive(index) {
 
 onMounted(startAutoplay)
 onBeforeUnmount(stopAutoplay)
+
 const isHovered = ref(false)
 </script>
 
