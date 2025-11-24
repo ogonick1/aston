@@ -7,6 +7,20 @@
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  padding-left: 140px;
+  padding-right: 140px;
+  @media (max-width: 1200px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @media (max-width: 760px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.container-main {
+  max-width: 1440px;
+  margin: 0 auto;
   padding-left: 32px;
   padding-right: 32px;
   @media (max-width: 760px) {

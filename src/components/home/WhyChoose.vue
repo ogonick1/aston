@@ -52,7 +52,7 @@ const benefits = [
   @include btn-base($primary, #ffffff, $black);
 }
 .desktop {
-  display: block;
+  display: flex;
   @media (max-width: 760px) {
     display: none;
   }
@@ -64,10 +64,10 @@ const benefits = [
   }
 }
 .why {
-  padding-top: 90px;
-  margin-bottom: 90px;
+  padding-top: 70px;
+  margin-bottom: 60px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 40px;
   @media (max-width: 760px) {
@@ -109,7 +109,7 @@ const benefits = [
   }
 }
 .why__image {
-  width: 35%;
+  width: 40%;
   max-width: 460px;
   position: relative;
   display: flex;

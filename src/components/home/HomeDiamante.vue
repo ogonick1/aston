@@ -4,8 +4,8 @@
       <div class="diamante__wrapper">
         <div class="diamante__image-wrapper">
           <div class="diamante__image">
-            <img src="/icons/diamante.png" alt="icon" />
-            <img class="image-star" src="/icons/star-1.png" alt="star" />
+            <img :src="diamante" alt="icon" />
+            <img class="image-star" :src="star" alt="star" />
           </div>
         </div>
         <div class="diamante__descriptions">
@@ -18,7 +18,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import diamante from '@/assets/icons/diamante.svg';
+import star from '@/assets/icons/star-1.svg';
+</script>
 
 <style lang="scss" scoped>
 .diamante {

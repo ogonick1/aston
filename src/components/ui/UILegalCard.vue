@@ -54,7 +54,7 @@ defineProps({
   padding: 24px;
   border-radius: 20px;
   background-color:#F5F7FA;
-  box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.05);
+  //box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.05);
   min-height: 192px;
   font-family: PTSerif;
   @media (max-width: 760px) {

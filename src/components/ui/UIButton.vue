@@ -20,12 +20,8 @@ defineProps({
 <style scoped lang="scss">
 
 .ui-btn {
-  @include btn-base($secondary, $primary, #C2D0E7);
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  //@include btn-base($secondary, $primary, #C2D0E7);
+  @include btn-secondary;
 
   .icon {
     display: inline-block;

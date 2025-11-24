@@ -1,5 +1,5 @@
 <template>
-  <div class="container hero">
+  <div class="container-main hero">
     <div class="hero__left">
       <h1 class="hero__left-title">DIFC business setup in Dubai</h1>
       <div class="hero__left-description">
@@ -16,7 +16,23 @@
       </div>
       <div class="hero__image-small">
         <img class="hero__image-stars" src="/icons/stars.svg" alt="stars" />
-        <img class="hero__image-house" src="/icons/hero-house.png" alt="home" />
+        <!--<img class="hero__image-house" src="/icons/hero-house.png" alt="home" />-->
+        <svg class="hero__image-house" width="86" height="60" viewBox="0 0 86 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 16L15 9" stroke="#062150" stroke-width="1.5"/>
+          <path d="M34 16L27 9" stroke="#062150" stroke-width="1.5"/>
+          <path d="M46 16L39 9" stroke="#062150" stroke-width="1.5"/>
+          <path d="M58 16L51 9" stroke="#062150" stroke-width="1.5"/>
+          <path d="M70 16L63 9" stroke="#062150" stroke-width="1.5"/>
+          <path d="M15 16L23 9" stroke="#062150" stroke-width="1.5"/>
+          <path d="M27 16L35 9" stroke="#062150" stroke-width="1.5"/>
+          <path d="M39 16L47 9" stroke="#062150" stroke-width="1.5"/>
+          <path d="M51 16L59 9" stroke="#062150" stroke-width="1.5"/>
+          <path d="M63 16L71 9" stroke="#062150" stroke-width="1.5"/>
+          <path d="M10 0.75H76C76.6904 0.75 77.25 1.30964 77.25 2V9.25H8.75V2C8.75 1.30964 9.30964 0.75 10 0.75Z" stroke="#062150" stroke-width="1.5"/>
+          <path d="M15 16H71C72.1046 16 73 16.8954 73 18V54.5H50.5V24.5H35V54.5H13V18C13 16.8954 13.8954 16 15 16Z" stroke="#062150" stroke-width="1.5"/>
+          <path d="M6 54.75H80C82.6448 54.75 84.8313 56.7059 85.1953 59.25H0.804688C1.1687 56.7059 3.35522 54.75 6 54.75Z" stroke="#062150" stroke-width="1.5"/>
+          </svg>
+
         <svg
           class="hero__image-graph"
           width="210"
@@ -88,10 +104,12 @@ import UIButton from '../ui/UIButton.vue'
       flex-direction: column;
     }
     .btn-primary {
-      @include btn-base($primary, #ffffff, $black);
+      @include btn-primary;
+      //@include btn-base($primary, #ffffff, $black);
     }
     .btn-secondary {
-      @include btn-base($secondary, $primary, $black-200);
+      @include btn-secondary;
+      //@include btn-base($secondary, $primary, $black-200);
       border: none;
     }
   }

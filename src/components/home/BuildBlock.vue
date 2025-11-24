@@ -345,12 +345,10 @@ onBeforeUnmount(() => {
   text-align: left;
   transition:
     background-color 0.5s ease,
-    border-color 0.5s ease,
-    box-shadow 0.5s ease;
+    border-color 0.5s ease;
   @media (min-width: 900px) {
     &:hover {
       background-color: #f5f7fa;
-      box-shadow: 0 6px 14px rgba(27, 40, 64, 0.08);
     }
   }
   @media (max-width: 760px) {
@@ -397,7 +395,6 @@ onBeforeUnmount(() => {
 
 .cv-tab--active {
   background-color: #e3eaf5;
-  box-shadow: 0 6px 14px rgba(27, 40, 64, 0.08);
   @media (min-width: 900px) {
     &:hover {
       background-color: #e3eaf5;
@@ -437,7 +434,6 @@ onBeforeUnmount(() => {
   background-color: transparent;
   transition:
     background-color 0.5s ease,
-    box-shadow 0.5s ease,
     transform 0.5s ease;
   padding-bottom: 20px;
   &:last-child {

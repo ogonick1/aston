@@ -30,6 +30,16 @@
         <div v-if="currentSlide" :key="currentSlide.id" class="license-card">
           <div class="license-card__media">
             <SlideMediaCollage
+              :image1="currentSlide.image1"
+              :image2="currentSlide.image2"
+              :iconSrc="currentSlide.iconSrc"
+              :iconSrc2="currentSlide?.iconSrc2"
+              :cardDescription="currentSlide.cardDescription"
+              :cardLabel="currentSlide.cardLabel"
+              :cardDescription2="currentSlide.cardDescription2"
+              :slide="currentSlide.id"
+            />
+            <!--<SlideMediaCollage
               v-if="currentSlide.id % 2 !== 0"
               :image1="currentSlide.image1"
               :image2="currentSlide.image2"
@@ -39,8 +49,8 @@
               :cardLabel="currentSlide.cardLabel"
               :cardDescription2="currentSlide.cardDescription2"
               :slide="currentSlide.id"
-            />
-            <SlideMediaCollage2
+            />-->
+            <!--<SlideMediaCollage2
               v-else
               :image1="currentSlide.image1"
               :image2="currentSlide.image2"
@@ -50,7 +60,7 @@
               :cardLabel="currentSlide.cardLabel"
               :cardDescription2="currentSlide.cardDescription2"
               :slide="currentSlide.id"
-            />
+            />-->
           </div>
 
           <div class="license-card__body">
@@ -356,9 +366,12 @@ const isHovered = ref(false)
 .license-slider {
   display: grid;
   grid-template-columns: 300px minmax(0, 1fr);
-  gap: 40px;
+  gap: 70px;
   margin: 0 auto;
   margin-bottom: 90px;
+  @media (max-width: 1200px) {
+    gap: 40px;
+  }
   @media (max-width: 1020px) {
     grid-template-columns: 200px minmax(0, 1fr);
     gap: 20px;
@@ -442,7 +455,7 @@ const isHovered = ref(false)
 
 /* Права частина */
 .license-slider__content {
-  //max-width: 800px;
+  max-width: 800px;
   background-color: $grey;
   border-radius: 16px;
   padding: 30px;

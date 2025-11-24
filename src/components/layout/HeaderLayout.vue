@@ -2,7 +2,7 @@
   <header class="header" :class="{ 'header--scrolled': isScrolled }">
     <!-- Чорний верхній бар -->
     <div class="header__top" :class="{ 'header__top--hidden': isScrolled }">
-      <div class="container header__top-wrapper">
+      <div class="container-main header__top-wrapper">
         <div class="left">
           <span>Talk Now</span>
 
@@ -38,7 +38,7 @@
 
     <!-- Білий хедер -->
     <div class="header__main" :class="{ 'header__main-scrolled': isScrolled }">
-      <div class="container header__main-wrapper">
+      <div class="container-main header__main-wrapper">
         <!-- ДЕСКТОПНЕ МЕНЮ -->
         <nav class="nav">
           <img class="logo" src="@/assets/logo.png" alt="Logo" />
@@ -52,7 +52,10 @@
         <div class="actions">
           <button class="btn btn-primary">Free consultation</button>
           <button class="btn btn-outline">
-            <img class="icon-btn" src="/icons/phone.svg" alt="signal" />
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 15.6744V19.0141C21 19.5099 20.6166 19.9213 20.1221 19.9563C19.709 19.9855 19.3721 20 19.1111 20C10.7654 20 4 13.2346 4 4.88889C4 4.62795 4.01459 4.29093 4.04377 3.87786C4.07874 3.38333 4.49011 3 4.98587 3H8.32565C8.56807 3 8.77111 3.18362 8.79544 3.42481C8.8173 3.64134 8.83761 3.81519 8.8564 3.94635C9.04744 5.28057 9.43767 6.55051 9.99599 7.72508C10.0856 7.91361 10.0272 8.13928 9.8573 8.26061L7.81891 9.7167C9.05988 12.6155 11.3845 14.9401 14.2833 16.1811L15.7367 14.1462C15.8596 13.9743 16.0879 13.9152 16.2787 14.0058C17.4532 14.5637 18.723 14.9535 20.0571 15.144C20.1874 15.1627 20.3601 15.1829 20.5752 15.2046C20.8164 15.2289 21 15.432 21 15.6744Z" fill="#062150"/>
+            </svg>
+
             Book call
           </button>
         </div>
@@ -134,7 +137,7 @@ watch(isMenuOpen, (val) => {
 }
 
 .header--scrolled {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  //box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 /* Чорний верхній бар */
@@ -234,8 +237,8 @@ watch(isMenuOpen, (val) => {
 
 /* Білий хедер */
 .logo {
-  height: 57px;
-  width: 57px;
+  height: 60px;
+  width: 60px;
   margin-right: 8px;
 }
 
@@ -299,24 +302,14 @@ watch(isMenuOpen, (val) => {
 }
 
 .btn-primary {
-  background: $primary;
-  color: #ffffff;
-  font-weight: 500;
-  &:hover {
-    background-color: $black;
-  }
+  @include btn-primary;
 }
 
 .btn-outline {
-  background: #ffffff;
-  color: $primary;
-  border-color: $primary;
+  @include btn-outline;
   &:hover {
-    color: $accent;
-    border-color: $accent;
-    .icon-btn {
-      filter: brightness(0) saturate(100%) invert(42%) sepia(92%) saturate(7266%) hue-rotate(1deg)
-        brightness(104%) contrast(105%);
+    svg > path {
+      fill: red;
     }
   }
 }

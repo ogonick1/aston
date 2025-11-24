@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="container">
+    <div class="container-main">
       <!-- NAV BLOCK -->
       <nav class="footer__nav" aria-label="Footer navigation">
         <div v-for="group in footerGroups" :key="group.title" class="footer__column">

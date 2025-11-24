@@ -105,11 +105,11 @@ onMounted(() => {
 <style scoped>
 .logos-marquee {
   position: relative;
-  margin-bottom: 66px;
-  margin-top: 66px;
+  margin-bottom: 50px;
+  margin-top: 65px;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 76px) {
   .logos-marquee {
     margin-bottom: 40px;
     margin-top: 40px;

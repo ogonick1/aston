@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-main">
     <nav class="breadcrumbs">
       <ul class="breadcrumbs__wrapper">
         <li class="breadcrumbs__item" v-for="(item, index) in items" :key="index">
