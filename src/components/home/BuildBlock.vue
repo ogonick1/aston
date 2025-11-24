@@ -112,9 +112,9 @@ import CorporateVisual from '../ui/CorporateVisual.vue'
 import iconBuild from '@/assets/icons/build.svg'
 import iconHands from '@/assets/icons/hands.svg'
 import iconPeople from '@/assets/icons/people.svg'
-import iconDocuments from '@/assets/icons/Documents.png'
-import iconPlanning from '@/assets/icons/Planning.png'
-import iconDiamond from '@/assets/icons/Diamond.png'
+import iconDocuments from '@/assets/icons/Documents.svg'
+import iconPlanning from '@/assets/icons/Planning.svg'
+import iconDiamond from '@/assets/icons/Diamond.svg'
 
 // SLIDER IMAGES
 import slide131 from '@/assets/icons/slide-131.jpg'
@@ -304,6 +304,7 @@ onBeforeUnmount(() => {
   font-size: 20px;
   color: $small-text;
   text-align: center;
+  letter-spacing: 0.01rem;
   @media (max-width: 760px) {
     font-size: 18px;
   }
@@ -387,6 +388,8 @@ onBeforeUnmount(() => {
 
 .cv-tab__subtitle {
   font-size: 16px;
+  letter-spacing: 0.004rem;
+  line-height: 1.5;
   color: $small-text;
   @media (max-width: 900px) {
     display: none;
@@ -405,11 +408,14 @@ onBeforeUnmount(() => {
 /* BOTTOM CONTENT */
 .cv-content {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: 40px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 64px;
   padding: 40px;
   background-color: #e3eaf5;
   border-radius: 16px;
+  @media (max-width: 1200px) {
+    gap: 40px;
+  }
   @media (max-width: 760px) {
     gap: 32px;
     min-height: 768px;
@@ -452,7 +458,7 @@ onBeforeUnmount(() => {
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap:18px;
 }
 
 .cv-list-item__title {
@@ -469,6 +475,8 @@ onBeforeUnmount(() => {
 .cv-list-item__desc {
   font-size: 16px;
   color: $small-text;
+  letter-spacing: 0.005rem;
+  line-height: 1.5;
   @media (max-width: 760px) {
     font-size: 14px;
   }
@@ -500,9 +508,9 @@ onBeforeUnmount(() => {
       svg > path {
         stroke: #fff;
       }
-      svg {
-        transform: rotate(45deg);
-      }
+      //svg {
+      //  transform: rotate(45deg);
+      //}
     }
     .cv-list-item__title {
       color: $primary;

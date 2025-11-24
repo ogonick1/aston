@@ -3,7 +3,7 @@
     <li v-for="(item, index) in items" :key="index" class="check-list__item" data-aos="zoom-in">
       <img class="check-list__icon" src="/icons/check.svg" alt="check icon" />
 
-      <span class="check-list__text">
+      <span class="check-list__text" :style="{ fontSize: size + 'px' }">
         {{ item }}
       </span>
     </li>
@@ -20,6 +20,10 @@ defineProps({
     type: String,
     required: true,
   },
+  size: {
+    type: Number,
+    default: 20
+  }
 })
 </script>
 

@@ -203,6 +203,7 @@ onBeforeUnmount(() => {
   font-size: 20px;
   text-align: center;
   margin-bottom: 102px;
+  letter-spacing: 0.01rem;
   @media (max-width: 760px) {
     margin-bottom: 24px;
     font-size: 18px;

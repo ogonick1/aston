@@ -256,7 +256,7 @@ defineProps({
 /* CARDS */
 .cv-card {
   border-radius: 4px;
-  padding: 16px 12px;
+  padding: 12px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -55,7 +55,7 @@ defineProps({
   border-radius: 20px;
   background-color:#F5F7FA;
   //box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.05);
-  min-height: 192px;
+  min-height: 166px;
   font-family: PTSerif;
   @media (max-width: 760px) {
     min-height: 158px;
@@ -95,6 +95,7 @@ defineProps({
   &__title {
     margin: 0;
     font-size: 20px;
+    line-height: 1.35;
     font-weight: 700;
     color: $primary;
   }

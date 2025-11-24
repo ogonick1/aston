@@ -29,17 +29,8 @@
       <Transition name="fade" mode="out-in">
         <div v-if="currentSlide" :key="currentSlide.id" class="license-card">
           <div class="license-card__media">
+
             <SlideMediaCollage
-              :image1="currentSlide.image1"
-              :image2="currentSlide.image2"
-              :iconSrc="currentSlide.iconSrc"
-              :iconSrc2="currentSlide?.iconSrc2"
-              :cardDescription="currentSlide.cardDescription"
-              :cardLabel="currentSlide.cardLabel"
-              :cardDescription2="currentSlide.cardDescription2"
-              :slide="currentSlide.id"
-            />
-            <!--<SlideMediaCollage
               v-if="currentSlide.id % 2 !== 0"
               :image1="currentSlide.image1"
               :image2="currentSlide.image2"
@@ -49,8 +40,8 @@
               :cardLabel="currentSlide.cardLabel"
               :cardDescription2="currentSlide.cardDescription2"
               :slide="currentSlide.id"
-            />-->
-            <!--<SlideMediaCollage2
+            />
+            <SlideMediaCollage2
               v-else
               :image1="currentSlide.image1"
               :image2="currentSlide.image2"
@@ -60,7 +51,7 @@
               :cardLabel="currentSlide.cardLabel"
               :cardDescription2="currentSlide.cardDescription2"
               :slide="currentSlide.id"
-            />-->
+            />
           </div>
 
           <div class="license-card__body">
@@ -78,6 +69,7 @@
                   @mouseenter="isHovered = true"
                   @mouseleave="isHovered = false"
                   label="Learn more"
+                  class="btn-secondary"
                 />
               </div>
             </div>
@@ -181,13 +173,13 @@ import slide129 from '@/assets/icons/slide-129.jpg'
 import slide130 from '@/assets/icons/slide-130.jpg'
 
 // ICONS
-import iconTax from '@/assets/icons/tax.png'
-import iconExchange from '@/assets/icons/exchange.png'
-import iconUp from '@/assets/icons/up.png'
-import iconDiscount from '@/assets/icons/discount.png'
-import iconManager from '@/assets/icons/Manager.png'
-import iconBank from '@/assets/icons/Bank.png'
-import iconInvest from '@/assets/icons/invest-money.png'
+import iconTax from '@/assets/icons/tax.svg'
+import iconExchange from '@/assets/icons/Exchange.svg'
+import iconUp from '@/assets/icons/up.svg'
+import iconDiscount from '@/assets/icons/discount.svg'
+import iconManager from '@/assets/icons/Manager.svg'
+import iconBank from '@/assets/icons/Bank.svg'
+import iconInvest from '@/assets/icons/invest-money.svg'
 
 const props = defineProps({
   modelValue: {
@@ -462,8 +454,8 @@ const isHovered = ref(false)
   transition: all 0.5s ease-out;
   display: flex;
   flex-direction: column;
-  gap:40px;
-  @media (max-width: 1020px) {
+  gap: 40px;
+  @media (max-width: 1200px) {
     padding: 16px;
   }
 }
@@ -484,8 +476,12 @@ const isHovered = ref(false)
 /* Media блок */
 .license-card__media {
   width: 100%;
-  height: 342px;
-  @media (max-width: 1020px) {
+  height: 370px;
+  padding-top: 16px;
+  padding-right: 30px;
+  @media (max-width: 1200px) {
+    padding-top: 0px;
+    padding-right: 0px;
   }
 }
 
@@ -519,20 +515,21 @@ const isHovered = ref(false)
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
-  margin: 0 0 18px;
+  margin: 0;
   color: $black;
   @media (max-width: 1020px) {
     font-size: 28px;
+    margin: 0 0 18px;
   }
   @media (max-width: 760px) {
-    margin: 0;
   }
 }
 
 .license-card__description {
   font-size: 18px;
-  line-height: 1.5;
+  letter-spacing: 0;
   color: $small-text;
+  letter-spacing: 0.01rem;
   @media (max-width: 1020px) {
     font-size: 16px;
   }
@@ -567,5 +564,11 @@ const isHovered = ref(false)
   opacity: 0;
 }
 
+
+.btn-secondary {
+  max-height: 48px;
+  //max-width: 200px;
+  padding: 24px;
+}
 
 </style>

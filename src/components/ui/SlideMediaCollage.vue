@@ -7,8 +7,9 @@
       </div>
       <!--<div class="star star--middle-right"></div>-->
       <div class="media-star" data-aos="zoom-out">
-        <img src="/icons/star-2.png" alt="star" />
-        <img class="star-absolute" src="/icons/star-2.png" alt="star" />
+        <!--<img src="/icons/star-2.png" alt="star" />-->
+        <img  :src="star_2" alt="star" />
+        <img class="star-absolute" :src="star_2" alt="star" />
       </div>
       <!-- CENTER tall photo -->
       <div class="media-item media-item--image media-item--center">
@@ -24,7 +25,11 @@
       </div>
       <!--<div class="star star--top-right"></div>-->
       <div class="media-star star-right" data-aos="zoom-out">
-        <img src="/icons/star-5.png" alt="star" />
+        <img :src="star" alt="star" />
+        <!--<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 0L16.3264 11.6736L28 14L16.3264 16.3264L14 28L11.6736 16.3264L0 14L11.6736 11.6736L14 0Z" fill="#FF6000"/>
+        </svg>-->
+
       </div>
       <!-- RIGHT bottom card -->
       <div class="media-item media-item--card media-item--dark-blue">
@@ -37,6 +42,8 @@
 </template>
 
 <script setup>
+import star from '@/assets/icons/star-5.svg'
+import star_2 from '@/assets/icons/star-2.svg'
 defineProps({
   slide: {
     type: Number,
@@ -82,6 +89,10 @@ defineProps({
   justify-content: center;
   align-items: end;
   position: relative;
+    img {
+    transform: translateY(15px);
+  }
+
 }
 .star-absolute {
   position: absolute;
@@ -99,12 +110,16 @@ defineProps({
   display: flex;
   justify-content: center;
   align-items: start;
+    img {
+    transform: translateY(-10px);
+  }
 }
 
 .media-star img {
   width: 48px;
   height: 48px;
   display: block;
+
 }
 .star-right img {
   width: 32px;
@@ -132,13 +147,14 @@ defineProps({
 /* GRID 3 columns */
 .media-collage__grid {
   display: grid;
-  grid-template-columns: 1.3fr 8px 1fr 8px 1fr;
+  grid-template-columns: 1.45fr 8px 1fr 8px 0.9fr;
   grid-template-rows: 1fr 1fr;
   gap: 8px 0;
   width: 100%;
   height: 100%;
+  @media (max-width: 1200px) {
+  }
   @media (max-width: 760px) {
-
 
   }
 }

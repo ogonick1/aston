@@ -57,7 +57,6 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-weight: normal;
 }
 
 body {
@@ -72,7 +71,7 @@ body {
     Archivo,
     sans-serif;
   font-size: 16px;
-  letter-spacing: normal;
+  letter-spacing: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

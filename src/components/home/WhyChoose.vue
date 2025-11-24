@@ -145,7 +145,9 @@ const benefits = [
     right: 0;
     width: 258px;
     height: 258px;
-    background-color: #e3eaf5;
+    background-color: #E3EAF5;
+    padding: 24px;
+    color: #062150;
     @media (max-width: 1020px) {
       width: 184px;
       height: 184px;
@@ -163,9 +165,11 @@ const benefits = [
     }
   }
   &-stars {
+    font-family: 'Inter';
     font-size: 24px;
     line-height: 1.2;
     font-weight: 500;
+    letter-spacing: 0.005rem;
     position: absolute;
     left: 18px;
     top: 18px;
@@ -187,13 +191,16 @@ const benefits = [
     position: absolute;
     left: 15px;
     bottom: 25px;
-    width: 190px;
+    width: 206px;
     height: auto;
 
     opacity: 0;
     transform: translateY(8px);
 
     animation: graph-fade-in 1s ease-out 1s forwards;
+    @media (max-width: 1200px) {
+      width: 190px;
+    }
     @media (max-width: 1020px) {
       width: 125px;
     }

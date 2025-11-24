@@ -7,7 +7,7 @@
       </div>
       <div class="hero__left-btns">
         <button class="btn btn-primary">Start my business</button>
-        <UIButton label="Book a meeting" />
+        <UIButton label="Book a meeting" class="btn-secondary" />
       </div>
     </div>
     <div class="hero__image">
@@ -104,13 +104,16 @@ import UIButton from '../ui/UIButton.vue'
       flex-direction: column;
     }
     .btn-primary {
+      @include btn-base($primary, #ffffff, $black);
       @include btn-primary;
-      //@include btn-base($primary, #ffffff, $black);
     }
     .btn-secondary {
       @include btn-secondary;
       //@include btn-base($secondary, $primary, $black-200);
       border: none;
+      @media (max-width: 760px) {
+        display: none;
+      }
     }
   }
 }

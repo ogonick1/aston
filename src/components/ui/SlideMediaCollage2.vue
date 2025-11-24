@@ -7,8 +7,8 @@
       </div>
       <!--<div class="star star--middle-right"></div>-->
       <div class="media-star" data-aos="zoom-out">
-        <img src="/icons/star-2.png" alt="star" />
-        <img class="star-absolute" src="/icons/star-2.png" alt="star" />
+        <img :src="star_2" alt="star" />
+        <img class="star-absolute" :src="star_2" alt="star" />
       </div>
       <!-- CENTER tall photo -->
       <div class="media-item media-item--image media-item--center">
@@ -24,7 +24,7 @@
       </div>
       <!--<div class="star star--top-right"></div>-->
       <div class="media-star star-right" data-aos="zoom-out">
-        <img src="/icons/star-5.png" alt="star" />
+        <img :src="star" alt="star" />
       </div>
       <!-- RIGHT bottom card -->
       <div class="media-item media-item--card media-item--dark-blue">
@@ -37,6 +37,8 @@
 </template>
 
 <script setup>
+import star from '@/assets/icons/star-5.svg'
+import star_2 from '@/assets/icons/star-2.svg'
 defineProps({
   slide: {
     type: Number,
@@ -75,6 +77,7 @@ defineProps({
 </script>
 
 <style scoped lang="scss">
+
 .media-star {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
@@ -82,6 +85,9 @@ defineProps({
   justify-content: center;
   align-items: start;
   position: relative;
+      img {
+    transform: translateY(-10px);
+  }
 }
 .star-absolute {
   position: absolute;
@@ -99,6 +105,9 @@ defineProps({
   display: flex;
   justify-content: center;
   align-items: end;
+      img {
+    transform: translateY(15px);
+  }
 }
 
 .media-star img {

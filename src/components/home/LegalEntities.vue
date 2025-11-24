@@ -56,7 +56,7 @@ import userIcon from '@/assets/icons/user.svg'
 import handsIcon from '@/assets/icons/hands.svg'
 import globeIcon from '@/assets/icons/globe.svg'
 import targetIcon from '@/assets/icons/target.svg'
-import caseIcon from '@/assets/icons/case.png'
+import caseIcon from '@/assets/icons/case.svg'
 </script>
 
 <style scoped lang="scss">
@@ -99,17 +99,20 @@ import caseIcon from '@/assets/icons/case.png'
     line-height: 1.2;
     font-weight: 700;
     color: $black;
+    @include header;
     @media (max-width: 760px) {
       font-size: 36px;
     }
   }
 
   &__text {
-    margin: 0 0 14px;
+    margin: 0 0 26px;
     font-size: 20px;
     color: $small-text;
+    letter-spacing: 0.01rem;
     @media (max-width: 760px) {
       font-size: 18px;
+      margin: 0 0 16px;
     }
   }
 

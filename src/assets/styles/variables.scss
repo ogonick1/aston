@@ -45,10 +45,10 @@ $peach-bg: #fbf5f1;
   &:hover {
     background-color: $black;
   }
-  //&:focus {
-  //  border: 3px solid $black;
-  //  background-color: #1F3762;
-  //}
+  &:focus {
+    border: 3px solid $black;
+    background-color: #1F3762;
+  }
   &:active {
     background-color: #051A3D
   }
@@ -73,10 +73,10 @@ $peach-bg: #fbf5f1;
     color: #FF6000;
     border: 1px solid #FF6000;
   }
-  //&:focus {
-  //  color: #FF6000;
-  //  border: 1px solid #FF6000;
-  //}
+  &:focus {
+    color: #FF6000;
+    border: 1px solid #FF6000;
+  }
   &:active {
     color: #E85A04;
     border: 1px solid #E85A04;
@@ -98,14 +98,15 @@ $peach-bg: #fbf5f1;
   border: 1px solid transparent;
   transition: all .4s ease-out;
   letter-spacing: 0;
+  font-weight: 600;
   &:hover {
     background: #C2D0E7;
-    border: 1px solid #C2D0E7;
+    //border: 1px solid #C2D0E7;
   }
-  //&:focus {
-  //  background: #EBF0F8;
-  //  border: 3px solid #E3EAF5;
-  //}
+  &:focus {
+    background: #EBF0F8;
+    //border: 1px solid #E3EAF5;
+  }
   &:active {
     background: #D3DBE9;
   }

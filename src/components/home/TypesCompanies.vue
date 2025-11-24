@@ -21,12 +21,12 @@
       <div class="types__grid">
         <!-- LEFT COLUMN -->
         <div class="types__column">
-          <CheckList :items="check" icon="/icons/check.svg" />
+          <CheckList :size="18" class="check-list" :items="check" icon="/icons/check.svg" />
         </div>
 
         <!-- RIGHT COLUMN -->
         <div class="types__column">
-          <CheckList :items="check2" icon="/icons/check.svg" />
+          <CheckList :size="18" class="check-list" :items="check2" icon="/icons/check.svg" />
         </div>
       </div>
     </div>
@@ -52,6 +52,12 @@ const check2 = [
 </script>
 
 <style scoped lang="scss">
+
+.check-list {
+  gap: 19px;
+  letter-spacing: 0.005rem;
+  letter-spacing: 0.01rem;
+}
 .types {
   padding: 90px 0;
   background-color: $grey;
@@ -88,6 +94,7 @@ const check2 = [
     font-size: 20px;
     color: $small-text;
     max-width: 550px;
+    letter-spacing: 0.01rem;
     @media (max-width: 760px) {
       font-size: 18px;
     }
