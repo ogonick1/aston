@@ -272,6 +272,7 @@ onBeforeUnmount(() => {
 .review-text {
   font-size: 18px;
   color: $small-text;
+  line-height: 1.54;
   @media (max-width: 760px) {
     font-size: 16;
   }

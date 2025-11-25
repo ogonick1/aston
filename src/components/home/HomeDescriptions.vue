@@ -60,6 +60,7 @@
     font-size: 18px;
     color: $small-text;
     font-weight: 500;
+    line-height: 1.54;
     @media (max-width: 760px) {
       font-size: 16px;
     }

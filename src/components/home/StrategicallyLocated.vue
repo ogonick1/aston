@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import CheckList from '../ui/CheckList.vue';
+import CheckList from '../ui/CheckList2.vue';
 
 const check = [
   'Located in central Dubai, next to Emirates Towers and Burj Khalifa',

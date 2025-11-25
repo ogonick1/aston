@@ -7,7 +7,7 @@
         financial professionals, and founders who require structure, trust, and international
         credibility.
       </div>
-      <CheckList class="desktop" :items="benefits" icon="/icons/check.svg" />
+      <CheckList2  class="desktop check-list" :items="benefits" icon="/icons/check.svg" />
     </div>
     <div class="why__image">
       <div class="why__image-main">
@@ -30,13 +30,13 @@
         </svg>
       </div>
     </div>
-    <CheckList class="mobile" :items="benefits" icon="/icons/check.svg"/>
+    <CheckList2 class="mobile check-list" :items="benefits" icon="/icons/check.svg"/>
     <button class="btn btn-primary mobile">Contact us</button>
   </div>
 </template>
 
 <script setup>
-import CheckList from '../ui/CheckList.vue'
+import CheckList2 from '../ui/CheckList2.vue'
 const benefits = [
   'Independent jurisdiction with English-language common law',
   '100% foreign ownership and no currency controls',
@@ -63,6 +63,7 @@ const benefits = [
     display: block;
   }
 }
+
 .why {
   padding-top: 70px;
   margin-bottom: 60px;
@@ -70,6 +71,7 @@ const benefits = [
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+
   @media (max-width: 760px) {
     flex-direction: column;
     justify-content: start;

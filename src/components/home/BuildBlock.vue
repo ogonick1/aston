@@ -387,6 +387,7 @@ onBeforeUnmount(() => {
 }
 
 .cv-tab__subtitle {
+  font-family: 'Archivo';
   font-size: 16px;
   letter-spacing: 0.004rem;
   line-height: 1.5;
@@ -472,7 +473,7 @@ onBeforeUnmount(() => {
   }
 }
 
-.cv-list-item__desc {
+.cv-list-item__desc{
   font-size: 16px;
   color: $small-text;
   letter-spacing: 0.005rem;

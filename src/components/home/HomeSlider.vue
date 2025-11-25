@@ -397,6 +397,7 @@ const isHovered = ref(false)
   text-transform: uppercase;
   color: $small-text;
   margin-bottom: 10px;
+  letter-spacing: 0.03rem;
   @media (max-width: 1020px) {
     font-size: 12px;
   }
